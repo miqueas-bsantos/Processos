@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="jsp/processos.js" type="text/javascript" charset="utf-8" async defer></script>
+<style>
+	body, html{
+		margin: 0;
+	}
+	.titulo{
+		margin: 0;
+		text-align: center;
+	}
+	#banner-topo{
+		margin: 0;
+		height: 200px;
+		background-color: black;
+		background: black;
+		color: white;
+		
+		width: 100%;
+		text-align: center;
+	}
+
+	.fechado{
+		height: 70px;
+		width: 600px;
+		overflow: hidden;
+	}
+
+	
+
+	/*
+	.titulo{
+		background-color: orange;
+		background: orange;
+		margin: 0;
+		
+	}
+	.titulo.solicitacoes{
+		background-color: black;
+		background: black;
+		margin: 0;
+		color: white;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		
+	}
+	.titulo.alteracao{
+		background-color: black;
+		background: black;
+		margin: 0;
+		color: white;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		
+	}
+	
+	.titulo.configuracao{
+		background-color: orange;
+		background: orange;
+		margin: 0;
+		color: black;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		
+	}
+	.titulo.financeiro{
+		background-color: black;
+		background: black;
+		margin: 0;
+		color: white;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		
+	}
+	.titulo.tecnologias{
+		background-color: orange;
+		background: orange;
+		margin: 0;
+		color: black;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		
+	}*/
+</style>
+ <meta charset="utf-8"/>
+ 
+</head>
+	
+<body>
+
+	<div id="banner-topo">
+		<h1>First Data</h1>
+	</div>
+	<ul class="nav nav-tabs">
+	  <li role="presentation"><a href="index-backoffice.html">Home</a></li>
+	  <li role="presentation" class="active"><a href="#" >BackOffice Operacional</a></li>
+	  <li role="presentation"><a href="#">Afiliação</a></li>
+	  <li role="presentation"><a href="#">Data Entry</a></li>
+	</ul>
+	<br>
+	<div class="row">
+		  <div  class="col-md-6 col-md-offset-4">
+			<h1>BackOffice Operacional - Processos</h1>
+		  </div>
+		  	  
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="input-group">
+			<span class="input-group-btn">
+				<button onclick="buscar();" class="btn nbtn-default" type="button">
+					Pesquisar
+				</button>	
+			</span>
+			<input id="search" type="text" class="form-control" />
+		 </div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<div class="col-md-10 col-md-offset-1">
+			<div id="pesquisas">
+				
+			</div>	
+		</div>
+		
+	</div>
+		
+	<div class="container-fluid">
+	<br>
+	<div  class="col-md-12 ">
+	
+	 <div onclick="iniciar(this);" class="col-md-12 ">
+	 <h1  class="titulo solicitacoes list-group-item active data-target" data-toggle="collapse">Solicitações</h1>
+		<div class="list-group " data-toggle="collapse">
+			  <a href="#" class="list-group-item">Solicitação de Destrava </a>
+			  <a href="#" class="list-group-item">Priorização de Solicitações do Estabelecimento</a>
+			  <a href="#" class="list-group-item">Transação Digitada BIN </a>
+			  <a href="#" class="list-group-item">Transação Digitada SIPAG</a>
+		</div>
+	 </div>
+	 
+	 <div onclick="iniciar(this);" class="col-md-12 ">
+	 <h1 class="titulo cancelamento list-group-item active">Cancelamento de venda</h1>
+		<div class="list-group">
+			  <a href="#" class="list-group-item">Cancelamento de Venda Debito</a>
+			  <a href="#" class="list-group-item">Cancelamento de Venda credito</a>
+			  <a href="#" class="list-group-item">Cancelamento de Venda Parcelado</a>
+		</div>
+	 </div>
+	 
+	 <div onclick="iniciar(this);" class="col-md-12 ">
+	 <h1 class="titulo alteracao list-group-item active">Alteração Cadastral</h1>
+		<div class="list-group">
+			  <a href="#" class="list-group-item">Reativação de Conta </a>
+			  <a href="#" class="list-group-item">Cancelamento de Conta </a>
+			  <a href="processos/alteracao/endereco/endereco.html" class="list-group-item">Endereço</a>
+			  <a href="#" class="list-group-item">Domicilio Bancário</a>
+			  <a href="#" class="list-group-item">Hierarquia</a>
+			  <a href="#" class="list-group-item">MCC</a>
+			  <a href="#" class="list-group-item">Produtos e Serviços</a>
+		</div>
+	 </div>
+	 <div onclick="iniciar(this);" class="col-md-12 ">
+	 <h1 class="titulo configuracao list-group-item active">Configuração</h1>
+		<div class="list-group">
+			  <a href="#" class="list-group-item">Configuração de Batch File</a>
+			  <a href="#" class="list-group-item">Configuração de Extrato Eletrônico - EDI</a>
+			  <a href="#" class="list-group-item">Liberação de Acesso ao Porta do Estabelecimento  </a>
+		</div>
+	 </div>
+	 <div onclick="iniciar(this);" class="col-md-12 ">
+	 <h1 class="titulo financeiro list-group-item active">Financeiro</h1>
+		<div class="list-group">
+			  <a href="#" class="list-group-item">Débito Indevido</a>
+			  <a href="#" class="list-group-item">Crédito Indevido </a>
+		</div>
+	 </div>
+	 <div onclick="iniciar(this);" class="col-md-12 ">
+	 <h1 class="titulo tecnologias list-group-item active">Tecnologias</h1>
+		<div class="list-group">
+			  <a href="#" class="list-group-item">Máquina TEF(Tranferência eletronica de Fundos)</a>
+			  <a href="#" class="list-group-item">Máquina Movel</a>
+			  <a href="#" class="list-group-item">Máquina Banda larga</a>
+			  <a href="#" class="list-group-item">Máquina Fixa</a>
+		</div>
+	 </div>
+	 <div onclick="iniciar(this);" class="col-md-12 ">
+	 <h1 class="titulo tecnologias list-group-item active">Taxas</h1>
+		<div class="list-group">
+			  <a href="#" class="list-group-item">Taxa de Afiliação </a>
+			  <a href="#" class="list-group-item">Taxa de Aluguel </a>
+			  <a href="#" class="list-group-item">Taxa de Extrato</a>
+			  <a href="#" class="list-group-item">Taxa de Serviço </a>
+			  <a href="#" class="list-group-item">Alteração Demais Canais  </a>
+			  <a href="#" class="list-group-item">Alteração Bancoob  </a>
+		</div>
+	 </div>
+	 <div onclick="iniciar(this);" class="col-md-12 ">
+	 <h1 class="titulo prazos list-group-item active">Prazos</h1>
+		<div class="list-group">
+			  <a href="#" class="list-group-item">Problemas com Prazos de Atendimento </a>
+		</div>
+	 </div>
+	 <div onclick="iniciar(this);" class="col-md-12 ">
+	 <h1 class="titulo franquias list-group-item active">Franquias</h1>
+		<div class="list-group">
+			  <a href="#" class="list-group-item">Franquias_Subway_5_a SEC </a>
+		</div>
+	 </div>
+	 <div onclick="iniciar(this);" class="col-md-12 ">
+	 <h1 class="titulo prazos list-group-item active">Outras Informações</h1>
+		<div class="list-group">
+			  <a href="#" class="list-group-item">Procedimento Padrão de BackOffice</a>
+			  <a href="#" class="list-group-item">Afiliação Via Banco</a>
+		</div>
+	 </div>
+	</div>
+	</div>
+
+</body>
+</html>
